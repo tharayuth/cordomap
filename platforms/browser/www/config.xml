@@ -9,6 +9,23 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <access origin="maps.googleapis.com" />
+    <access origin="maps.gstatic.com" />
+    <access origin="mt0.googleapis.com" />
+    <access origin="mt1.googleapis.com" />
+    <access origin="csi.gstatic.com" />
+    <access origin="*.google.com" />
+    <access origin="*.googleapis.com" />
+    <access origin="*.gstatic.com" />
+    <access origin="*.googleusercontent.com" />
+    <access origin="google.com" subdomains="true" />
+    <access origin="googleapis.com" subdomains="true" />
+    <access origin="gstatic.com" subdomains="true" />
+    <access origin="googleusercontent.com" subdomains="true" />
+    <access origin="*://*.googleapis.com/*" subdomains="true" />
+    <access origin="*://*.gstatic.com/*" subdomains="true" />
+    <access origin="*://*.google.com/*" subdomains="true" />
+    <access origin="*://*.googleusercontent.com/*" subdomains="true" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -17,4 +34,5 @@
     <allow-intent href="geo:*" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
+    <preference name="phonegap-version" value="cli-7.1.0" />
 </widget>

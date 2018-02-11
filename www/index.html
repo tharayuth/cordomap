@@ -50,7 +50,7 @@
             <p class="event received">Device is Ready</p>
         </div>
     </div>
-	<div class="map_canvas">
+	<div id="map_canvas">xx
 	</div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
@@ -61,11 +61,13 @@
 <script type="text/javascript">
 var map;
 document.addEventListener("deviceready", function() {
+	
   var div = document.getElementById("map_canvas");
 
   // Initialize the map view
   map = plugin.google.maps.Map.getMap(div);
 
+alert("xx");
   // Wait until the map is ready status.
   map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
 }, false);
