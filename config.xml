@@ -127,5 +127,14 @@
     </platform>
     <plugin name="cordova-plugin-googlemaps" spec="~2.2.3">
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyC0776p8h34Buv2tjvH1L82s515x47XFPs" />
-    </plugin>
+    <variable name="PLAY_SERVICES_VERSION" value="11.8.0" />
+    <variable name="LOCATION_WHEN_IN_USE_DESCRIPTION" value="Show your location on the map" />
+    <variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="Trace your location on the map" />
+  </plugin>
+
+  <!--
+    You need to specify cli-7.1.0 or greater version.
+    https://build.phonegap.com/current-support
+  -->
+  <preference name="phonegap-version" value="cli-7.1.0" />
 </widget>
