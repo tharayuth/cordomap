@@ -50,8 +50,9 @@
             <p class="event received">Device is Ready</p>
         </div>
     </div>
-	<div id="map_canvas">xx
-	</div>
+	<div class="map" id="map_canvas">
+                    <span class="smallPanel"><button>current: map.trafficLayer = false</button></span>
+                </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
@@ -65,20 +66,17 @@ document.addEventListener("deviceready", function() {
   var div = document.getElementById("map_canvas");
 
   // Initialize the map view
-  map = plugin.google.maps.Map.getMap(div);
+  map = plugin.google.maps.Map.getMap(div, {
+  camera: {
+    target: {
+      lat: 13.7658224,
+      lng: 100.5384603
+    },
+    zoom: 17
+  }
+});
 
-alert("xx");
-  // Wait until the map is ready status.
-  map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
-}, false);
-
-function onMapReady() {
-  var button = document.getElementById("button");
-  button.addEventListener("click", onButtonClick);
-  map.setTrafficEnabled(true);
-
-	/*
-	  map.one(plugin.google.maps.event.MAP_READY, function() {
+map.one(plugin.google.maps.event.MAP_READY, function() {
 
 
 			  var isEnabled = false;
@@ -90,42 +88,53 @@ function onMapReady() {
 			  });
 
 		});
-	*/
+	
 
-}
+alert("map ok.");
+  // Wait until the map is ready status.
+  map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
+}, false);
 
-function onButtonClick() {
 
-  // Move to the position with animation
-  map.animateCamera({
-    target: {lat: 37.422359, lng: -122.084344},
-    zoom: 17,
-    tilt: 60,
-    bearing: 140,
-    duration: 5000
-  }, function() {
+/*
+	function onMapReady() {
+	  var button = document.getElementById("button");
+	  button.addEventListener("click", onButtonClick);
+	}
 
-    // Add a maker
-    map.addMarker({
-      position: {lat: 37.422359, lng: -122.084344},
-      title: "Welecome to \n" +
-             "Cordova GoogleMaps plugin for iOS and Android",
-      snippet: "This plugin is awesome!",
-      animation: plugin.google.maps.Animation.BOUNCE
-    }, function(marker) {
+	function onButtonClick() {
 
-      // Show the info window
-      marker.showInfoWindow();
+	  // Move to the position with animation
+	  map.animateCamera({
+		target: {lat: 37.422359, lng: -122.084344},
+		zoom: 17,
+		tilt: 60,
+		bearing: 140,
+		duration: 5000
+	  }, function() {
 
-      // Catch the click event
-      marker.on(plugin.google.maps.event.INFO_CLICK, function() {
+		// Add a maker
+		map.addMarker({
+		  position: {lat: 37.422359, lng: -122.084344},
+		  title: "Welecome to \n" +
+				 "Cordova GoogleMaps plugin for iOS and Android",
+		  snippet: "This plugin is awesome!",
+		  animation: plugin.google.maps.Animation.BOUNCE
+		}, function(marker) {
 
-        // To do something...
-        alert("Hello world!");
+		  // Show the info window
+		  marker.showInfoWindow();
 
-      });
-    });
-  });
-}
+		  // Catch the click event
+		  marker.on(plugin.google.maps.event.INFO_CLICK, function() {
+
+			// To do something...
+			alert("Hello world!");
+
+		  });
+		});
+	  });
+	}
+*/
 </script>
 </html>
